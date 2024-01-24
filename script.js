@@ -25,3 +25,17 @@ function addPlants(name, species, water) {
   const newPlant = { name, species, water };
   plants.push(newPlant);
 }
+
+const form = document.getElementById("plantForm");
+function addPlantFromForm(event) {
+  event.preventDefault();
+
+  const name = form.name.value;
+  const species = form.species.value;
+  const water = form.water.value;
+
+  addPlants(name, species, water);
+  displayPlants();
+  form.reset();
+}
+form.addEventListener("submit", addPlantFromForm);
