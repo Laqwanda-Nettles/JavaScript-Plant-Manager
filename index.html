@@ -4,32 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Plant Management</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form id="plantForm">
-      <label for="plantName">Name: </label>
-      <input
-        type="text"
-        name="name"
-        placeholder="Plant's Name"
-        aria-placeholder="Enter plant's name"
-      />
-      <label for="species">Species: </label>
-      <input
-        type="text"
-        name="species"
-        placeholder="Species"
-        aria-placeholder="Enter plant species"
-      />
-      <label for="water">Water Schedule: </label>
-      <input
-        type="text"
-        name="water"
-        placeholder="Water Schedule"
-        aria-placeholder="Enter water schedule"
-      />
-      <button>Submit</button>
-    </form>
+    <header>
+      <h1>Plant Savy</h1>
+    </header>
+    <div class="form-container">
+      <form id="plantForm">
+        <label for="plantName">Name: </label>
+        <input
+          type="text"
+          name="name"
+          placeholder="Plant's Name"
+          aria-placeholder="Enter plant's name"
+        />
+        <label for="species">Species: </label>
+        <input
+          type="text"
+          name="species"
+          placeholder="Species"
+          aria-placeholder="Enter plant species"
+        />
+        <label for="water">Water Schedule: </label>
+        <input
+          type="text"
+          name="water"
+          placeholder="Water Schedule"
+          aria-placeholder="Enter water schedule"
+        />
+        <button>Submit</button>
+      </form>
+    </div>
     <ul id="plantList"></ul>
     <script src="script.js"></script>
   </body>

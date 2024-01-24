@@ -15,7 +15,9 @@ function displayPlants() {
 
   plants.forEach((plant) => {
     const li = document.createElement("li");
-    li.innerHTML = `Name: ${plant.name}, Species: ${plant.species}, Water Schedule: ${plant.water}`;
+    li.innerHTML = `<p>Name: ${plant.name}</p> 
+    <p>Species: ${plant.species}</p> 
+    <p>Water Schedule: ${plant.water}</p>`;
     plantList.appendChild(li);
   });
 }
