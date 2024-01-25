@@ -6,8 +6,16 @@ const examplePlant = {
   water: "once a week",
 };
 
-const plants = [];
+let plants = [];
 plants.push(examplePlant);
+
+function loadLocalStorage() {
+  const plantData = JSON.parse(localStorage.getItem("plants"));
+  if (plantData) {
+    plants = plantData;
+  }
+}
+loadLocalStorage();
 
 function displayPlants() {
   const plantList = document.getElementById("plantList");
@@ -26,6 +34,9 @@ displayPlants();
 function addPlants(name, species, water) {
   const newPlant = { name, species, water };
   plants.push(newPlant);
+
+  const storePlants = JSON.stringify(plants);
+  localStorage.setItem("plants", storePlants);
 }
 
 const form = document.getElementById("plantForm");
