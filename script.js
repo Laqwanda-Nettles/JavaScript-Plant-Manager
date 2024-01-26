@@ -52,3 +52,14 @@ function addPlantFromForm(event) {
   form.reset();
 }
 form.addEventListener("submit", addPlantFromForm);
+
+function removePlant() {
+  const removal = form.removePlant.value;
+  for (let index = 0; index < plants.length; index++) {
+    if (plants[index].name === removal) {
+      plants.splice(index, 1);
+    }
+  }
+}
+const btn = document.getElementById("removeBtn");
+btn.addEventListener("click", removePlant);
