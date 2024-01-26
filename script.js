@@ -37,6 +37,14 @@ function addPlants(name, species, water) {
 
   const storePlants = JSON.stringify(plants);
   localStorage.setItem("plants", storePlants);
+
+  if (name.trim() === "") {
+    alert("Name field cannot be empty");
+  } else if (species.trim() === "") {
+    alert("Species field cannot be empty");
+  } else if (water.trim() === "") {
+    alert("Water Schedule field cannot be empty");
+  }
 }
 
 const form = document.getElementById("plantForm");
