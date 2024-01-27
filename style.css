@@ -29,32 +29,6 @@ input[type="text"] {
   padding: 5px;
 }
 
-.form-container i {
-  position: absolute;
-  top: 30px;
-  left: 190px;
-  visibility: hidden;
-}
-.form-container.success i.fa-circle-check {
-  visibility: visible;
-  color: #2ecc71;
-}
-.form-container.error i.fa-circle-exclamation {
-  visibility: visible;
-  color: #e74c3c;
-}
-
-.form-container small {
-  visibility: hidden;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-.form-container.error small {
-  color: #e74c3c;
-  visibility: visible;
-}
-
 button {
   padding: 5px 10px;
   border-radius: 5px;
@@ -75,13 +49,6 @@ button:hover {
 }
 #removeBtn:hover {
   background-color: indianred;
-}
-
-.form-container.success input {
-  border-color: #2ecc71;
-}
-.form-container.error input {
-  border-color: #e74c3c;
 }
 
 ul {

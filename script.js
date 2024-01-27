@@ -8,7 +8,11 @@ const examplePlant = {
 
 let plants = [];
 plants.push(examplePlant);
+
 const form = document.getElementById("plantForm");
+const nameInput = document.getElementById("name");
+const speciesInput = document.getElementById("species");
+const waterInput = document.getElementById("water");
 
 function loadLocalStorage() {
   const plantData = JSON.parse(localStorage.getItem("plants"));
@@ -43,9 +47,48 @@ function addPlants(name, species, water) {
 function addPlantFromForm(event) {
   event.preventDefault();
 
-  const name = form.name.value.trim();
-  const species = form.species.value.trim();
-  const water = form.water.value.trim();
+  const name = form.name.value;
+  const species = form.species.value;
+  const water = form.water.value;
+
+  if (name.length === 0) {
+    nameInput.style.borderColor = "red";
+    alert("Name input cannot be blank");
+  } else if (name.length < 3) {
+    nameInput.style.borderColor = "red";
+    alert("Name input cannot be less than 3 characters");
+  } else if (name.length > 30) {
+    nameInput.style.borderColor = "red";
+    alert("Name input cannot be more than 30 characters");
+  } else {
+    nameInput.style.borderColor = "green";
+  }
+
+  if (species.length === 0) {
+    speciesInput.style.borderColor = "red";
+    alert("Species input cannot be blank");
+  } else if (species.length < 3) {
+    speciesInput.style.borderColor = "red";
+    alert("Species input cannot be less than 3 characters");
+  } else if (species.length > 30) {
+    speciesInput.style.borderColor = "red";
+    alert("Species input cannot be more than 30 characters");
+  } else {
+    speciesInput.style.borderColor = "green";
+  }
+
+  if (water.length === 0) {
+    waterInput.style.borderColor = "red";
+    alert("Water Schedule cannot be blank");
+  } else if (water.length < 3) {
+    waterInput.style.borderColor = "red";
+    alert("Water Schedule cannot be less than 3 characters");
+  } else if (water.length > 30) {
+    waterInput.style.borderColor = "red";
+    alert("Water Schedule cannot be more than 30 characters");
+  } else {
+    waterInput.style.borderColor = "green";
+  }
 
   addPlants(name, species, water);
   displayPlants();
