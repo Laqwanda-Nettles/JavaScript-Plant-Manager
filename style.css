@@ -9,6 +9,12 @@ h1 {
 h2 {
   color: #588157;
 }
+p {
+  font-size: 18px;
+  background-color: #386641;
+  color: #f0f0f0;
+  padding: 10px;
+}
 
 .form-container {
   margin-bottom: 10px;
