@@ -10,43 +10,69 @@
     <header>
       <h1>Plant Savy</h1>
     </header>
-    <div class="form-container">
-      <form id="plantForm">
+
+    <form id="plantForm">
+      <div class="form-container">
         <label for="plantName">Name: </label>
         <input
           type="text"
           name="name"
+          id="name"
           placeholder="Plant's Name"
           aria-placeholder="Enter plant's name"
+          required
         />
-    </div>
-        <div class="form-container">
+        <i class="fas fa-circle-check"></i>
+        <i class="fas fa-circle-exclamation"></i>
+        <small>Error Message</small>
+      </div>
+      <div class="form-container">
         <label for="species">Species: </label>
         <input
           type="text"
           name="species"
+          id="species"
           placeholder="Species"
           aria-placeholder="Enter plant species"
+          required
         />
-    </div>
-        <div class="form-container">
+        <i class="fas fa-circle-check"></i>
+        <i class="fas fa-circle-exclamation"></i>
+        <small>Error Message</small>
+      </div>
+      <div class="form-container">
         <label for="water">Water Schedule: </label>
         <input
           type="text"
           name="water"
+          id="water"
           placeholder="Water Schedule"
           aria-placeholder="Enter water schedule"
+          required
         />
+        <i class="fas fa-circle-check"></i>
+        <i class="fas fa-circle-exclamation"></i>
+        <small>Error Message</small>
       </div>
-        <button>Submit</button>
-        <div class="form-container">
-        <input type="text" name="removePlant" id="removePlant" placeholder="Enter name of plant to remove" aria-placeholder="Enter the name of plant to remove">
-        <button id="removeBtn">Remove</button>
+      <button>Submit</button>
+      <div class="form-container">
+        <input
+          type="text"
+          name="removePlant"
+          id="removePlant"
+          placeholder="Enter name of plant to remove"
+          aria-placeholder="Enter the name of plant to remove"
+        />
+        <div id="removeBtn">Remove</div>
       </div>
-      </form>
-    
+    </form>
+
     <h2>Current Plants:</h2>
     <ul id="plantList"></ul>
     <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/d898d29e6c.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

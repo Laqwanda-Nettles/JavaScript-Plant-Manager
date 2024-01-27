@@ -8,6 +8,7 @@ const examplePlant = {
 
 let plants = [];
 plants.push(examplePlant);
+const form = document.getElementById("plantForm");
 
 function loadLocalStorage() {
   const plantData = JSON.parse(localStorage.getItem("plants"));
@@ -23,9 +24,9 @@ function displayPlants() {
 
   plants.forEach((plant) => {
     const li = document.createElement("li");
-    li.innerHTML = `<p>Name: ${plant.name}</p> 
-    <p>Species: ${plant.species}</p> 
-    <p>Water Schedule: ${plant.water}</p>`;
+    li.innerText = `Name: ${plant.name} \n 
+    Species: ${plant.species} \n 
+    Water Schedule: ${plant.water}`;
     plantList.appendChild(li);
   });
 }
@@ -37,23 +38,14 @@ function addPlants(name, species, water) {
 
   const storePlants = JSON.stringify(plants);
   localStorage.setItem("plants", storePlants);
-
-  if (name.trim() === "") {
-    alert("Name field cannot be empty");
-  } else if (species.trim() === "") {
-    alert("Species field cannot be empty");
-  } else if (water.trim() === "") {
-    alert("Water Schedule field cannot be empty");
-  }
 }
 
-const form = document.getElementById("plantForm");
 function addPlantFromForm(event) {
   event.preventDefault();
 
-  const name = form.name.value;
-  const species = form.species.value;
-  const water = form.water.value;
+  const name = form.name.value.trim();
+  const species = form.species.value.trim();
+  const water = form.water.value.trim();
 
   addPlants(name, species, water);
   displayPlants();
@@ -62,12 +54,17 @@ function addPlantFromForm(event) {
 form.addEventListener("submit", addPlantFromForm);
 
 function removePlant() {
-  const removal = form.removePlant.value;
+  let removal = form.removePlant.value;
   for (let index = 0; index < plants.length; index++) {
     if (plants[index].name === removal) {
       plants.splice(index, 1);
+
+      const storePlants = JSON.stringify(plants);
+      localStorage.setItem("plants", storePlants);
     }
   }
+  displayPlants();
+  form.reset();
 }
 const btn = document.getElementById("removeBtn");
 btn.addEventListener("click", removePlant);
