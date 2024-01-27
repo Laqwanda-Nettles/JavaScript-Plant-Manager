@@ -53,39 +53,39 @@ function addPlantFromForm(event) {
 
   if (name.length === 0) {
     nameInput.style.borderColor = "red";
-    alert("Name input cannot be blank");
+    return alert("Name input cannot be blank");
   } else if (name.length < 3) {
     nameInput.style.borderColor = "red";
-    alert("Name input cannot be less than 3 characters");
+    return alert("Name input cannot be less than 3 characters");
   } else if (name.length > 30) {
     nameInput.style.borderColor = "red";
-    alert("Name input cannot be more than 30 characters");
+    return alert("Name input cannot be more than 30 characters");
   } else {
     nameInput.style.borderColor = "green";
   }
 
   if (species.length === 0) {
     speciesInput.style.borderColor = "red";
-    alert("Species input cannot be blank");
+    return alert("Species input cannot be blank");
   } else if (species.length < 3) {
     speciesInput.style.borderColor = "red";
-    alert("Species input cannot be less than 3 characters");
+    return alert("Species input cannot be less than 3 characters");
   } else if (species.length > 30) {
     speciesInput.style.borderColor = "red";
-    alert("Species input cannot be more than 30 characters");
+    return alert("Species input cannot be more than 30 characters");
   } else {
     speciesInput.style.borderColor = "green";
   }
 
   if (water.length === 0) {
     waterInput.style.borderColor = "red";
-    alert("Water Schedule cannot be blank");
+    return alert("Water Schedule cannot be blank");
   } else if (water.length < 3) {
     waterInput.style.borderColor = "red";
-    alert("Water Schedule cannot be less than 3 characters");
+    return alert("Water Schedule cannot be less than 3 characters");
   } else if (water.length > 30) {
     waterInput.style.borderColor = "red";
-    alert("Water Schedule cannot be more than 30 characters");
+    return alert("Water Schedule cannot be more than 30 characters");
   } else {
     waterInput.style.borderColor = "green";
   }
